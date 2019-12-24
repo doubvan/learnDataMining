@@ -1,18 +1,17 @@
-<<<<<<< HEAD
 # learnDataMining 数据挖掘作业
 *谢凡-201934739*
 
-##实验目的
+## 实验目的
 测试sklearn中K-Means、Affinity propagation、Mean-shift、Spectral、Ward hierarchical clustering、 Agglomerative clustering、DBSCAN、Gaussian mixtures聚类算法在sklearn.datasets.load_digits、sklearn.datasets.fetch_20newsgroups这两个数据集上的聚类效果。
 
-##数据预处理
+## 数据预处理
 **load_digits**手写数字数据，在sklearn中被保存为一个numpy.nparray，这个ndarray共1797行、64列，每一行都是一个手写数字，8*8的像素被保存在一行中。我们需要对digits进行标准化，考虑到example对digit进行了降维并在二维上进行聚类且可视化，本实验针对digits的所有聚类也基于降维：本实验采用PCA（主成分分析）对digits降维，在二维的映射点如下：
-
+![图片标题](https://raw.githubusercontent.com/doubvan/learnDataMining/master/img/1.png)
 **fetch_20newsgroups**则是新闻语料数据，是用于文本分类、文本挖据和信息检索研究的国际标准数据集之一。数据集收集了大约20,000左右的新闻组文档，均匀分为20个不同主题的新闻组集合。一些新闻组的主题特别相似，还有一些却完全不相关 。
 我们需要对newsgroups进行提取特征，本实验采用是TF-IDF的方法。但提取的TF-IDF 向量是非常稀疏的，超过30000维的特征才有159个非零特征。所以在后续的处理中，运算速度都比较缓慢。
 因为数据的维度问题，Newsgroup并没有做可视化处理。
 
-##实验内容
+## 实验内容
 1. k-means
 k-means步骤是随机选取K个对象作为初始的聚类中心，然后计算每个对象与各个种子聚类中心之间的距离，把每个对象分配给距离它最近的聚类中心。聚类中心以及分配给它们的对象就代表一个聚类。
 digits:
